@@ -1,6 +1,6 @@
 "use client"
 import { logInAction , logInFacebookAction} from '../utils/actions'
-import facebookimg from "../../../public/facebook-circle.svg"
+import facebookimg from "../../../public/facebook.svg"
 import goggleimg from "../../../public/google.webp"
 import Image from 'next/image'
 
