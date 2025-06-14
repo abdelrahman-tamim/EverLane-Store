@@ -56,7 +56,6 @@ import { getUserFromDb } from "./utils/actions";
             if(user){
                 token.id=user.id;
                 token.email=user.Email;
-                
             }
             return token
         },
