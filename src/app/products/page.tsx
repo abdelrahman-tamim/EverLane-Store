@@ -1,7 +1,7 @@
   "use client"
  
-  import FilterBtn from '../_components/FilterBtn';
-  import { Data } from '../_types/types';
+import FilterBtn from '../_components/FilterBtn';
+import { Data } from '../_types/types';
 import Allproducts from './ProductsList';
  
   type props ={

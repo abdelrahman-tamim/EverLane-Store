@@ -4,7 +4,6 @@ import { Data } from '../_types/types';
 
 export default function Expandtext({item}:{item:Data}) {
   let [isExpanded,setExpanded]=useState(false);
-  console.log(item)
   return (
    <>
    <div>
