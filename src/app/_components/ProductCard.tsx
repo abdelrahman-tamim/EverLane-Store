@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Data } from "../_types/types";
 import Actiontbtn from "./Actionbtn";

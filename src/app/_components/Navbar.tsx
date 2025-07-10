@@ -12,8 +12,7 @@ import {Cairo} from "next/font/google";
 import { auth } from '../auth';
 import NavLink from './NavLink';
 import Signoutbtn from './Signoutbtn';
-const cairo=Cairo({subsets:["latin"]})
-
+ 
 const routes=[
   {
     name:"Home",
@@ -41,7 +40,7 @@ export default async function Navbar() {
         <div className='flex space-x-12 '>
         {
           routes.map(({name,path})=>{
-           return <NavLink name={name} path={path}/>
+           return <NavLink key={path} name={name} path={path}/>
           })
         }
         </div>

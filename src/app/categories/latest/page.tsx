@@ -6,7 +6,7 @@ import { getProducts } from "@/app/utils/getProductsfn"
 import { useQuery } from "@tanstack/react-query"
 
 
-export default function page() {
+export default function Page() {
   let {data}=useQuery({queryKey:["productsData"],queryFn:getProducts})
   data=data?.products.filter((item:Data)=>{
     return item.category=="beauty";

@@ -1,6 +1,4 @@
 "use client";
-import { RootState } from '@reduxjs/toolkit/query'
-import Image from 'next/image';
 import React from 'react'
 import { useSelector } from 'react-redux'
 import Actiontbtn from '../_components/Actionbtn';
@@ -14,8 +12,7 @@ type Data = {
   price: number;
   quantity:number;
 };
-
-export default function cart() {
+export default function Cart() {
 const items=useSelector((state:any)=>state.cart.items);
 const cartitemsnumber=items.reduce((a:number,b:any)=>{
   return a+b.quantity;
@@ -31,7 +28,7 @@ const totalcartprice=items.reduce((a:number,b:any)=>{
      
     {items.map((item:Data)=>{
       return (
-        <div className='flex gap-7 w-[1000px] border-b-1 pb-4 mb-3'>
+        <div key={item.id} className='flex gap-7 w-[1000px] border-b-1 pb-4 mb-3'>
           <img width={200} height={700} src={item.images[0]} alt='image'/>
           <div className='flex flex-col gap-2'>
           <div className="text-2xl">{item.title}</div>

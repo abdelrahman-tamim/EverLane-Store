@@ -20,9 +20,9 @@ import { getUserFromDb } from "./utils/actions";
             authorize: async(credentials)=>{
                 try {
             console.log(credentials);
-            let {email,password}= await signInSchema.parseAsync(credentials);
+            const {email,password}= await signInSchema.parseAsync(credentials);
             console.log(email)
-           let user = await getUserFromDb(email,password); 
+           const user = await getUserFromDb(email,password); 
             console.log("thw",user);
             if(!user){
                 return null;

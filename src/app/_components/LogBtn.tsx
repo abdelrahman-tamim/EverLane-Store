@@ -1,36 +1,80 @@
-"use client"
-import { logInAction , logInFacebookAction} from '../utils/actions'
-import facebookimg from "../../../public/facebook.svg"
-import goggleimg from "../../../public/google.webp"
-import Image from 'next/image'
+"use client";
+import {
+  logInAction,
+  logInFacebookAction,
+  signInAction,
+} from "../utils/actions";
+import facebookimg from "../../../public/facebook.svg";
+import goggleimg from "../../../public/google.webp";
+import Image from "next/image";
+import { useState, useTransition } from "react";
 
-export default function LogInBtn() {
+export default function LoginForm() {
+  const [showEmailForm, setShowEmailForm] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
+  const [isFacebookLoading, setIsFacebookLoading] = useState(false);
+
+  const handleGoogleLogin = () => {
+    setIsGoogleLoading(true);
+    startTransition(async () => {
+      await logInAction();
+      setIsGoogleLoading(false);
+    });
+  };
+
+  const handleFacebookLogin = () => {
+    setIsFacebookLoading(true);
+    startTransition(async () => {
+      await logInFacebookAction();
+      setIsFacebookLoading(false);
+    });
+  };
+
   return (
-    <>
-    <div className='flex flex-col items-center my-20 gap-15 '>
-    <form action={logInAction}>
-      <div className=' cursor-pointer flex gap-3 text-3xl border-2 font-semibold border-gray-500 py-5 px-9.5 align-middle justify-between 
-      bg-white shadow-xl
-      '>
-        <Image className='cursor-pointer' src={goggleimg} height={80} alt='google logo'/>
-        <button className='cursor-pointer'  type='submit'>
-            Log In With Google 
-        </button>
+    <div className="bg-white py-8 px-6 shadow-2xl rounded-xl border border-gray-100">
+      <div className="space-y-6">
+        {/* Social Login Buttons */}
+        <div className="space-y-3">
+          <button
+            onClick={handleGoogleLogin}
+            disabled={isGoogleLoading || isPending}
+            className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isGoogleLoading ? (
+              <div className="w-5 h-5 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin mr-3"></div>
+            ) : (
+              <Image
+                src={goggleimg}
+                width={20}
+                height={20}
+                alt="Google"
+                className="mr-3"
+              />
+            )}
+            Continue with Google
+          </button>
+
+          <button
+            onClick={handleFacebookLogin}
+            disabled={isFacebookLoading || isPending}
+            className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isFacebookLoading ? (
+              <div className="w-5 h-5 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin mr-3"></div>
+            ) : (
+              <Image
+                src={facebookimg}
+                width={20}
+                height={20}
+                alt="Facebook"
+                className="mr-3"
+              />
+            )}
+            Continue with Facebook
+          </button>
         </div>
-    </form>
-     <form  action={logInFacebookAction}>
-      
-      <div className=' cursor-pointer flex text-3xl border-2 font-semibold border-gray-500 py-5 px-5 gap-3  align-middle justify-center 
-       bg-white shadow-xl
-      '>
-      <Image className='cursor-pointer' src={facebookimg} height={85} alt='facebook logo'/>
-     <button className='cursor-pointer' type='submit'>
-         Log In With Facebook
-     </button> 
-     </div>
- </form>
- </div>
- 
- </>
-  )
+      </div>
+    </div>
+  );
 }

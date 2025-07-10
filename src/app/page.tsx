@@ -2,7 +2,6 @@ import Image from "next/image";
 import homeimg from "../../public/home.jpg";
 import Link from "next/link";
 import Catagories from "./categories/page";
-import ProductsList from "./products/page";
 import Allproducts from "./products/ProductsList";
 
 

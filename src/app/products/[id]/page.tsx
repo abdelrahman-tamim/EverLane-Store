@@ -1,9 +1,5 @@
 "use client"
-import Image from "next/image";
 import Actiontbtn from "../../_components/Actionbtn";
-import { title } from "process";
-import { Data } from "@/app/_types/types";
-import Expandtext from "@/app/_components/Expandtext";
 import { useParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getProductById } from "@/app/utils/getProductsfn";

@@ -1,5 +1,5 @@
 "use client"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart, decreaseItem } from "../_redux/cartslice";
 import React from "react";
 type Data = {
