@@ -22,6 +22,7 @@ const totalcartprice=items.reduce((a:number,b:any)=>{
   return a+(b.quantity*b.price);
 },0);
   return (
+    
     <>
     <div className=' relative flex w-full justify-center'>
     <div className='mt-10'>
