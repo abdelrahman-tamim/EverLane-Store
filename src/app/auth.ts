@@ -55,7 +55,7 @@ import { getUserFromDb } from "./utils/actions";
         async jwt({token,user}){
             if(user){
                 token.id=user.id;
-                token.email=user.Email;
+                token.email=user.email;
             }
             return token
         },
