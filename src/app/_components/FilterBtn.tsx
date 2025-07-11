@@ -24,7 +24,6 @@ export default function FilterBtn() {
 
   return (
     <div className="w-full bg-white p-5">
-      {/* Mobile dropdown */}
       <div className="md:hidden relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -50,7 +49,7 @@ export default function FilterBtn() {
         )}
       </div>
 
-      {/* Desktop buttons */}
+     
       <div className="hidden md:flex gap-8 justify-center">
         {categories.map((category) => (
           <button

@@ -48,12 +48,12 @@ export default async function Navbar() {
 
         {session ? (
           <div className='flex items-center gap-2 md:gap-4'>
-            {/* Search icon - hidden on smallest screens */}
+            
             <div className='hidden sm:block'>
               <Image src={searchimg} alt='search' width={24} height={24} />
             </div>
             
-            {/* Cart and Account - always visible */}
+         
             <Link href="/cart" className='transform hover:scale-105 transition-transform'>
               <Image src={cartimg} alt='cart' width={24} height={24} />
             </Link>
@@ -61,7 +61,7 @@ export default async function Navbar() {
               <Image src={accountimg} alt='account' width={24} height={24} />
             </Link>
 
-            {/* Sign out button - responsive styling */}
+          
             <div className='flex items-center gap-1 md:gap-2 ml-2 md:ml-8 bg-white'>
               <div className='font-semibold text-gray-700 text-sm md:text-md font-mono'>
                 <Signoutbtn/>
