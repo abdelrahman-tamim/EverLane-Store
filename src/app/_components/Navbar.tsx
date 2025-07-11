@@ -49,16 +49,13 @@ export default async function Navbar() {
         {session ? (
           <div className='flex items-center gap-2 md:gap-4'>
             
-            <div className='hidden sm:block'>
-              <Image src={searchimg} alt='search' width={24} height={24} />
-            </div>
             
          
             <Link href="/cart" className='transform hover:scale-105 transition-transform'>
-              <Image src={cartimg} alt='cart' width={24} height={24} />
+              <Image src={cartimg} alt='cart' width={30} height={30} className='w-[30px] h-[30px] md:w-[32px] md:h-[32px]' />
             </Link>
             <Link href="/account" className='transform hover:scale-105 transition-transform'>
-              <Image src={accountimg} alt='account' width={24} height={24} />
+              <Image src={accountimg} alt='account' width={30} height={30} className='w-[30px] h-[30px] md:w-[32px] md:h-[32px]' />
             </Link>
 
           
