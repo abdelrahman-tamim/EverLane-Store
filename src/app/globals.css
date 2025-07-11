@@ -1,6 +1,20 @@
 @import "tailwindcss";
 @theme inline {}
 
+@layer components {
+  #menu-toggle:checked ~ label span:first-child {
+    transform: rotate(45deg) translate(1.5px, 1.5px);
+  }
+  
+  #menu-toggle:checked ~ label span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  #menu-toggle:checked ~ label span:last-child {
+    transform: rotate(-45deg) translate(1.5px, -1.5px);
+  }
+}
+
 
 
 

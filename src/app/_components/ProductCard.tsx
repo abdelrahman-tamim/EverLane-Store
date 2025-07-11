@@ -17,11 +17,12 @@ export default function ProductCard({data}:props) {
           className="flex flex-col bg-white p-4 shadow-lg rounded-xl hover:shadow-xl transition-shadow h-[480px]"
         >
           <Link href={`/products/${item.id}`}>
-            <div className="w-full h-64 relative">
+            <div className="w-full h-64 relative flex items-center justify-center">
               <img 
                 src={item.images[1] || item.images[0]} 
                 alt={item.title}  
-                className="rounded-md"
+                className="rounded-md object-contain w-full h-full max-w-xs max-h-60 sm:max-w-full sm:max-h-64"
+                style={{objectFit: 'cover'}}
               />
             </div>
           </Link>
