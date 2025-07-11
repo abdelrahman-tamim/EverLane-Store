@@ -54,25 +54,6 @@ export default function LoginForm() {
             )}
             Continue with Google
           </button>
-
-          <button
-            onClick={handleFacebookLogin}
-            disabled={isFacebookLoading || isPending}
-            className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isFacebookLoading ? (
-              <div className="w-5 h-5 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin mr-3"></div>
-            ) : (
-              <Image
-                src={facebookimg}
-                width={20}
-                height={20}
-                alt="Facebook"
-                className="mr-3"
-              />
-            )}
-            Continue with Facebook
-          </button>
         </div>
       </div>
     </div>
