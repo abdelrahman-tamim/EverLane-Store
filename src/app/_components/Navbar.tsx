@@ -52,10 +52,10 @@ export default async function Navbar() {
             
          
             <Link href="/cart" className='transform hover:scale-105 transition-transform'>
-              <Image src={cartimg} alt='cart' width={30} height={30} className='w-[30px] h-[30px] md:w-[32px] md:h-[32px]' />
+              <Image src={cartimg} alt='cart' width={40} height={40} className='w-[40px] h-[40px]' />
             </Link>
             <Link href="/account" className='transform hover:scale-105 transition-transform'>
-              <Image src={accountimg} alt='account' width={30} height={30} className='w-[30px] h-[30px] md:w-[32px] md:h-[32px]' />
+              <Image src={accountimg} alt='account' width={40} height={40} className='w-[40px] h-[40px]' />
             </Link>
 
           
