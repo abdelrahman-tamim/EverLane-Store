@@ -3,5 +3,5 @@ import { auth } from "./app/auth";
 export const middleware=auth
 
 export const config={
-    matcher:["/account","/cart"],
+    matcher:["/account"],
 }
