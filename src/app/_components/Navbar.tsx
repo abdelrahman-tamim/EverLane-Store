@@ -43,7 +43,7 @@ export default async function Navbar() {
         </div>
 
         <li className='min-w-[120px] md:min-w-[150px]'>
-          <Image className='w-[180px] md:w-[250px]' src={logo} alt='logo'/>
+          <Link href="/"><Image className='w-[180px] md:w-[250px]' src={logo} alt='logo'/></Link> 
         </li>
 
         {session ? (
