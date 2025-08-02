@@ -73,17 +73,17 @@ export default async function Navbar() {
             </div>
           </div>
         ) : (
-          <>
-          <Link href="/cart" className='transform hover:scale-105 transition-transform'>
-              <Image src={cartimg} alt='cart' width={40} height={40} className='w-[40px] h-[40px]' />
+          <div className='flex items-center gap-4'>
+            <Link href="/cart" className='transform hover:scale-105 transition-transform'>
+              <Image src={cartimg} alt='cart' width={32} height={32} className='w-[32px] h-[32px]' />
             </Link>
-          <div className='flex gap-1 text-sm md:text-md font-mono'>
-            <p className='hidden lg:block'>Have an account?</p>
-            <p className='font-semibold text-gray-600 border-b-1'>
-              <Link href="/login">Log in</Link>
-            </p>
+            <div className='flex items-center gap-2 text-sm md:text-md font-mono'>
+              <p className='hidden lg:block text-gray-600'>Have an account?</p>
+              <p className='font-semibold text-gray-700 hover:text-gray-900 transition-colors'>
+                <Link href="/login">Log in</Link>
+              </p>
+            </div>
           </div>
-          </>
         )}
       </ul>
       <hr/>

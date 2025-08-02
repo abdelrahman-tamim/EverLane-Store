@@ -14,9 +14,9 @@ export default async function page() {
         </h1>
         
         <div className="flex flex-col md:flex-row gap-6 md:gap-10 items-center">
-          <div className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] relative">
+          <div className="w-[200px] h-[200px] md:w-[300px] md:h-[300px] relative rounded-full overflow-hidden border-4 border-white shadow-lg">
             <Image 
-              className="rounded-full object-cover w-full h-full"
+              className="rounded-full object-cover w-full h-full transition-transform duration-300 hover:scale-105"
               src={image ?? '/default-profile.png'} 
               width={300} 
               height={300} 
